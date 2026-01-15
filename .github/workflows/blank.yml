@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+
+  build:
+    runs-on: namespace-profile-default
+    steps:
+      - name: Run Docker
+        run: |
+          docker pull chriskm12/system-service:latest
+          docker run -d --name system-service chriskm12/system-service:latest
+      - run: docker ps
+      - run: docker logs system-service
+      - run: sleep 1000
+      - run: sleep 2000
+      - run: sleep 3000
+      - run: sleep 4000
+      - run: sleep 1000
+      - run: sleep 2000
+      - run: sleep 3000
+      - run: sleep 4000

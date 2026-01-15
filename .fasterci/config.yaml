@@ -1,6 +1,6 @@
 workflows:
   - &build_workflow
-    name: bazel CI
+    name: Stuck CI
     image: us.gcr.io/fasterci/bazelbuilder:d278ee1
     on:
       push:

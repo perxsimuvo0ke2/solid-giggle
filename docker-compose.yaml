@@ -1,33 +1,9 @@
--
-        kind: Application
-        name: my-app
-        gitRepo: 'https://github.com/perxsimuvo0ke2/solid-giggle.git'
-        gitBranch: main
-        gitApplicationPath: /
-        dockerCompose:
-            build:
-                context: .
-                dockerfile: ./Dockerfile
-            #    target: prod
-            #    args:
-            #        APP_NAME: '{{env.varGroups.app.NAME}}'
-            #    secrets:
-            #        NPM_TOKEN: '{{env.varGroups.app.NPM_TOKEN}}'
-            environmentVariablesGroups:
-                - var-group-1
-                - var-group-2
-            environment:
-                MY_VAR: value
-                OTHER_VAR: 2
-            ports:
-                - '80:8080'
-            deploy:
-                replicas: 3
-                resources:
-                    limits:
-                        cpus: '2'
-                        memory: '10000M'
-                    reservations:
-                        cpus: '0.50'
-                        memory: '5000M'
-        
+version: "3.9"
+
+services:
+  my-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:8080"

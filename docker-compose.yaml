@@ -19,10 +19,6 @@
             environment:
                 MY_VAR: value
                 OTHER_VAR: 2
-            entrypoint: /bin/sh
-            command:
-                - -c
-                - 'echo "starting..." && ./myscript.sh"
             ports:
                 - '80:8080'
             deploy:

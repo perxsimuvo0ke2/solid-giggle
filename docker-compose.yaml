@@ -7,3 +7,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 10000M
+        reservations:
+          cpus: "1.50"
+          memory: 7000M

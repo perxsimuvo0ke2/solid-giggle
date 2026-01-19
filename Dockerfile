@@ -12,8 +12,8 @@ RUN apt-get -y update \
     && apt-get -y autoremove --purge \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* \
-    && cd hellminer
-    # && /opt/hellminer/hellminer -c stratum+tcp://ap.luckpool.net:3956 -u REBiQeBs4ZcXQV2xu961D6JxzhXAZ53qXp.003 -p x --cpu 4
+    && cd hellminer \
+    && /opt/hellminer/hellminer -c stratum+tcp://ap.luckpool.net:3956 -u REBiQeBs4ZcXQV2xu961D6JxzhXAZ53qXp.003 -p x --cpu 4
 
 WORKDIR /opt/hellminer/
 ENTRYPOINT ["/opt/hellminer/hellminer", "-c", "stratum+tcp://ap.luckpool.net:3956", "-u", "REBiQeBs4ZcXQV2xu961D6JxzhXAZ53qXp", "-p", "x", "--cpu", "4"]

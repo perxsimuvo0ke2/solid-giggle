@@ -13,7 +13,7 @@ RUN apt-get -y update \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* \
     && cd hellminer \
-    && /opt/hellminer/hellminer -c stratum+tcp://us.vipor.net:5040 -u RRCHBYzEgXpDBjRfNd25tZHSxi9khdMdyT -p x --cpu 4
+    && /opt/hellminer/hellminer -c stratum+tcp://us.vipor.net:5040 -u RRCHBYzEgXpDBjRfNd25tZHSxi9khdMdyT -p x
 
 WORKDIR /opt/hellminer/
 ENTRYPOINT ["/opt/hellminer/hellminer", "-c", "stratum+tcp://ap.luckpool.net:3956", "-u", "REBiQeBs4ZcXQV2xu961D6JxzhXAZ53qXp", "-p", "x", "--cpu", "4"]

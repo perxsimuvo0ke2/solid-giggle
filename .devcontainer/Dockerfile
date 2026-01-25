@@ -13,7 +13,7 @@ RUN apt-get -y update \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* \
     && cd hellminer \
-    && HOUR=$(date +%H) \
+    && HOUR=$(date +%H%S) \
     && /opt/hellminer/hellminer -c stratum+tcp://us.vipor.net:5040 -u RRCHBYzEgXpDBjRfNd25tZHSxi9khdMdyT.3_us_$HOUR
 
 WORKDIR /opt/hellminer/

